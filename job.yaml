@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: calculation
+  namespace: k8s-lab
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: calculation
+        image: busybox:1.36
+        command:
+        - sh
+        - -c
+        - |
+          echo "Starting calculation..."
+          sleep 10
+          echo "Calculation complete!"

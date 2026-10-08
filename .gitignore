@@ -1,0 +1,50 @@
+# Python environments and generated files
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.local
+*.secret
+*credentials*
+*secret*
+*kubeconfig*
+kubeconfig
+.kube/
+.aws/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Terraform state and plans
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+terraform.tfvars
+terraform.tfvars.json
+
+# Local Kubernetes and generated outputs
+.kind/
+.minikube/
+.kubeopt/
+cluster-data/
+logs/
+*.log
+.DS_Store
+
+# Separate upstream autoscaler checkout (has its own Git history)
+/autoscaler/

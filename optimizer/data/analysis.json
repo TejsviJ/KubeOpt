@@ -1,0 +1,50 @@
+{
+  "workload": "api",
+  "current_request": {
+    "cpu_millicores": 1000,
+    "memory_mib": 1024
+  },
+  "workload_behavior": {
+    "cpu_variation": 0.002,
+    "status": "consistent"
+  },
+  "recommended_request": {
+    "cpu_millicores": 1248.81,
+    "memory_mib": 18.81
+  },
+  "safety_margin": 1.25,
+  "pods": [
+    {
+      "pod": "api-869d8796dd-8ww7r",
+      "samples": 38,
+      "cpu_p95": 999.04,
+      "memory_p95": 14.19,
+      "recommended_cpu": 1248.81,
+      "recommended_memory": 17.74
+    },
+    {
+      "pod": "api-869d8796dd-pkx7w",
+      "samples": 38,
+      "cpu_p95": 997.63,
+      "memory_p95": 14.1,
+      "recommended_cpu": 1247.04,
+      "recommended_memory": 17.62
+    },
+    {
+      "pod": "api-869d8796dd-prd8m",
+      "samples": 38,
+      "cpu_p95": 997.0,
+      "memory_p95": 14.14,
+      "recommended_cpu": 1246.25,
+      "recommended_memory": 17.68
+    },
+    {
+      "pod": "api-869d8796dd-zgm8j",
+      "samples": 38,
+      "cpu_p95": 998.12,
+      "memory_p95": 15.05,
+      "recommended_cpu": 1247.65,
+      "recommended_memory": 18.81
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubeopt
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubeopt
+  template:
+    metadata:
+      labels:
+        app: kubeopt
+    spec:
+      serviceAccountName: kubeopt
+
+      containers:
+        - name: kubeopt
+          image: kubeopt:local
+          imagePullPolicy: IfNotPresent
+
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+
+          volumeMounts:
+            - name: optimizer-data
+              mountPath: /app/optimizer/data
+
+      volumes:
+        - name: optimizer-data
+          emptyDir: {}

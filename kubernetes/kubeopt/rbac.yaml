@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: kubeopt
+  namespace: default
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: kubeopt-reader
+  namespace: default
+rules:
+  - apiGroups:
+      - metrics.k8s.io
+    resources:
+      - pods
+    verbs:
+      - get
+      - list
+
+  - apiGroups:
+      - apps
+    resources:
+      - deployments
+    verbs:
+      - get
+      - list
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: kubeopt-reader
+  namespace: default
+subjects:
+  - kind: ServiceAccount
+    name: kubeopt
+    namespace: default
+roleRef:
+  kind: Role
+  name: kubeopt-reader
+  apiGroup: rbac.authorization.k8s.io
