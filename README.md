@@ -39,19 +39,3 @@ CAST AI integration: document the integration path, supported features, and conf
    ```
 
    Apply individual root-level YAML files separately when needed; the correct order depends on the cluster setup.
-
-## Configuration and secrets
-
-Keep kubeconfigs, AWS credentials, CAST AI tokens, `.env` files, private keys, and cluster-specific settings out of Git. Use Kubernetes Secrets or an external secret manager for runtime credentials. Commit a sanitized `.env.example` only if the application needs one.
-
-## Development
-
-Describe the optimizer and API run commands, expected metrics input, recommendation output, and local kind workflow here. Add tests and CI instructions as those workflows are established.
-
-## Security
-
-Do not apply these manifests to production without reviewing permissions, resource limits, images, and secret handling. Report vulnerabilities privately to the repository maintainers.
-
-## License
-
-Add the license and attribution that apply to the Kubeopt project. The separately maintained upstream autoscaler source is excluded from this repository; consult its own license and repository for that code.
